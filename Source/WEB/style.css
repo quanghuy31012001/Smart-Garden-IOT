@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    margin: 0px;
+    font-family: 'Dancing Script', cursive;
+}
+.header{
+    width: 0px auto;
+    height: 220px;
+    line-height: 150px;
+    text-align: center;
+    font-size: 25px;
+    background-color: 	rgb(160, 217, 255);
+  }
+  /*logo*/
+
+.border {
+    float: center;
+    margin: auto;
+    width: 10%;
+    border-style: solid;
+    border: 3px solid rgb(3, 21, 81);
+    border-radius: 10px;
+  }
+
+
+.column {
+    float: left;;
+    width: 50%;
+    text-align: center;
+    padding: 50px;
+    background-color:rgb(213, 205, 214);
+    
+}
+.column1 {
+    float: left;;
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+    background-color:rgb(213, 205, 214);
+    
+}
+.column img{
+    width: 236px;
+    height: 240px;
+    float: center;
+}
+
+.Value{float: center; }
+.Value #Temperature{float: center;}
+.Value #Humidity{float: center;}
+.Value #Rain{float: center;}
+
+.column button{
+    width: 50px;
+    height: 50px;
+    padding: 3px 12px;
+    background-color: rgb(201, 103, 190); 
+    cursor: pointer;
+  }
+
+footer{
+    padding: 1px;
+    margin: 0px;
+    text-align: center;
+    list-style: none;
+    font-size: 18px;
+    color: black;
+    background-color: rgb(160, 217, 255);
+    clear: left;
+}
+  

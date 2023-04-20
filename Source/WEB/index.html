@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoTLaB </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+
+    
+</head>
+<body>
+    
+    <div class = "header">
+        
+        <h1>Nguyễn Văn Quang Huy</h1>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h1> Temperature </h1>
+                <img src="Images/temperature2.png">
+                    <div class="value">
+                        <p id = "Temperature"></p>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="column">
+            <h1> Gas </h1>
+                <img src="Images/gas.png">
+                    <div class="value">
+                        <p id = "Gas"></p>
+                    </div>
+        </div>
+
+        <div class="column">
+            <h1> Humidity </h1>
+                <img src="Images/humidity.png">
+                    <div class="value">
+                        <p id = "Humidity"></p>
+                    </div>
+        </div>
+
+        <div class="column">
+            <h1> Rain </h1>
+                <img src="Images/rain.png">
+                    <div class="value">
+                        <p id = "Rain"></p>
+                    </div>
+        </div>
+        
+        
+    </div>
+    <div class="row">
+        <div class="column1">
+            <div class="border">
+                <p><button type="button" id="eqon" >On</button>
+                <button type="button" id="eqoff" >Off</button></p>
+                </div>
+        </div>
+    </div>
+      
+<footer>
+
+    <h1>19119030</h1>
+        
+</footer>
+
+    
+    <script src="function.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+<script>
+    const firebaseConfig = {
+    apiKey: "AIzaSyC9Fm3igFJnrWmTPmHGWGEfJtlq6q-GXlY",
+    authDomain: "koko-c00c3.firebaseapp.com",
+    databaseURL: "https://koko-c00c3-default-rtdb.firebaseio.com",
+    projectId: "koko-c00c3",
+    storageBucket: "koko-c00c3.appspot.com",
+    messagingSenderId: "521217991351",
+    appId: "1:521217991351:web:cf3880f8ce4da0f3282332",
+    measurementId: "G-DH233G501F"
+  };
+
+  // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    
+      var Temperature = document.getElementById('Temperature');
+      var dbRef1 = firebase.database().ref('Set').child('Nhiet do');  
+      var Gas = document.getElementById('Gas');
+      var dbRef2 = firebase.database().ref('Set').child('Khi gas');
+      var Humidity = document.getElementById('Humidity');
+      var dbRef3 = firebase.database().ref('Set').child('Do am');
+      var Rain = document.getElementById('Rain');
+      var dbRef4 = firebase.database().ref('Set').child('Luong mua');
+    
+        dbRef1.on('value', snap => Temperature.innerText = snap.val());
+        dbRef2.on('value', snap => Gas.innerText = snap.val());
+        dbRef3.on('value', snap => Humidity.innerText = snap.val());
+        dbRef4.on('value', snap => Rain.innerText = snap.val());
+       
+      
+</script>
+</body>
+</html>
